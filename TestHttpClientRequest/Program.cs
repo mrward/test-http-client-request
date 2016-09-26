@@ -32,9 +32,9 @@ namespace TestHttpClientRequest
 			var httpClient = new HttpClient ();
 			using (var response = await httpClient.GetAsync (url)) {
 				if (response.StatusCode == HttpStatusCode.BadRequest) {
-					Console.WriteLine ("Unexpected Bad request status code: {0}", response.StatusCode);
+					Console.WriteLine ("Unexpected Bad request status code: {0} {1}", response.StatusCode, (int)(response.StatusCode));
 				} else if (response.StatusCode == HttpStatusCode.Unauthorized) {
-					Console.WriteLine ("Got expected unauthorized status code: {0}", response.StatusCode);
+					Console.WriteLine ("Got expected unauthorized status code: {0} {1}", response.StatusCode, (int)(response.StatusCode));
 				} else {
 					Console.WriteLine (response.StatusCode);
 				}
